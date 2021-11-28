@@ -8,6 +8,7 @@ const Op = db.Sequelize.Op
 
 module.exports.userSearch = function (req, res) {
 	var query = "SELECT name,id FROM Users WHERE login='" + req.body.login + "'";
+	
 	db.sequelize.query(query, {
 		model: db.User
 	}).then(user => {
